@@ -33,8 +33,8 @@ class App extends Component {
     axios.get('https://cc9926f6-c324-44c2-bf9c-fd7d5878085b-bluemix.cloudant.com/hs-bcw2018-ebike/_all_docs?include_docs=true',
     
     { auth: {
-        username: "cc9926f6-c324-44c2-bf9c-fd7d5878085b-bluemix",
-        password: "0fb7accb5cd569525804110fe0eec4d7685e91f82a2c56c61d39c053e8e04e55"}})
+        username: "<username>",
+        password: "<password>"}})
         .then( response => {
             //console.log("https response", response);
             console.log("try to access record= ", response.data.rows[2].doc.input.text);
