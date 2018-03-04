@@ -34,7 +34,7 @@ The documents have to have the following json keys:
 4. Check that the Source Repository URL points to the correct Git-Repository
 5. Configure the Deliver Pipeline steps (Build and Deliver)
 6. In the Build Stage select NPM as Builder type and use the following build script 
-
+```
 #Set up required version of Node and NPM
 export NVM_DIR=/home/pipeline/nvm
 export NODE_VERSION=7.0.0
@@ -48,14 +48,14 @@ npm config delete prefix \
   && nvm use default \
   && node -v \
   && npm -v
-
+```
 #Install & build
 npm install && npm install axios && npm install react-table && npm run build
 
 7. Set Build archive directory to build
 
 8. In the Deploy stage specfie the deploy config appropriate and use the following Deploy Script
-
+```
 #!/bin/bash
 # Push app
 if ! cf app $CF_APP; then  
@@ -80,5 +80,5 @@ fi
 # Export app name and URL for use in later Pipeline jobs
 export CF_APP_NAME="$CF_APP"
 export APP_URL=http://$(cf app $CF_APP_NAME | grep urls: | awk '{print $2}')
-
+```
 #Run the Build and Deploy Process and the app should be deployed to the IBM Cloud env. you specified in the Deploy Config
