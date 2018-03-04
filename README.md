@@ -48,10 +48,10 @@ npm config delete prefix \
   && nvm use default \
   && node -v \
   && npm -v
-```
+
 #Install & build
 npm install && npm install axios && npm install react-table && npm run build
-
+```
 7. Set Build archive directory to build
 
 8. In the Deploy stage specfie the deploy config appropriate and use the following Deploy Script
